@@ -7,7 +7,7 @@ An automated, lightweight server diagnostics script written in Python to simulat
 When executed on production host wrappers, the engine outputs the following structured operational validation stream directly to the terminal shell interface:
 
 ```text
---- MICRON AUTOMATED HEALTH CHECK START ---
+--- AUTOMATED HEALTH CHECK START ---
 Executing Layer 3 Network check on: 8.8.8.8...
  -> SUCCESS: Network gateway path is online.
 
@@ -21,7 +21,7 @@ AI-ASSISTED OPERATIONAL REMEDIATION SUMMARY:
  -> Suggested Admin Action: Run 'sudo systemctl restart database'.
 --------------------------------------------------
 
---- MICRON AUTOMATED HEALTH CHECK COMPLETE ---
+--- AUTOMATED HEALTH CHECK COMPLETE ---
 ```
 
 ## 🛠️ Infrastructure Core Features
