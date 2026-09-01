@@ -1,0 +1,23 @@
+---
+- name: Factory Server Security Configuration Playbook
+  hosts: manufacturing_nodes
+  become: yes  # Runs with administrative powers (sudo)
+
+  tasks:
+    - name: 1. Deploy secure user folder for production engineer
+      user:
+        name: mfg_engineer
+        state: present
+        shell: /bin/bash
+
+    - name: 2. Enforce strict folder permissions (Owner read/write only)
+      file:
+        path: /home/mfg_engineer/secure_designs
+        state: directory
+        mode: '0600'  # Restricts access to just the owner
+
+    - name: 3. Audit and enable secure enterprise network port
+      firewall_service:
+        port: 443  # Secure HTTPS port for manufacturing telemetry data
+        state: enabled
+        permanent: yes
